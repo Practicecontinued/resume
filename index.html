@@ -1,0 +1,436 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Isaak Kevan-Hoffman: scenic artist, fabricator, printmaker and creative technologist. Hover or tap any job for its notes.">
+<meta property="og:title" content="Isaak Kevan-Hoffman, Resume">
+<meta property="og:description" content="Scenic artist, fabricator, printmaker and creative technologist. Hover or tap any job for its notes.">
+<meta property="og:type" content="website">
+<style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Isaak Kevan-Hoffman Resume</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&family=Fraunces:opsz,wght,SOFT,WONK@9..144,100..900,0..100,0..1&display=swap">
+<style>
+  /* Layout: the paper resume on the web. A straight silver rule under the hand-drawn name, a timeline of work on the left,
+     a toolbox on the right. Every job and skill opens a small window of notes. Silver for surfaces, ochre for accents. */
+  :root{
+    --rule:#a9b0b7; --rule-hi:#e4e7ea;
+    --bg:#fcfcfd; --ink:#1b1d20; --soft:#43474d; --mute:#6b7178;
+    --accent:#bf7a2c; --accent-ink:#975a16; --line:#d9dde1; --chip:#eef0f2; --chip-hi:#e1e4e8;
+    --win:#ffffff; --win-bar:#eef0f2; --win-edge:#1b1d20;
+    --shadow:0 22px 44px -20px rgba(30,34,40,.34),0 2px 6px rgba(30,34,40,.08);
+    --ink-filter:none; --ink-blend:multiply;
+    --sans:"Avenir Next","Figtree",Avenir,"Segoe UI",Helvetica,Arial,sans-serif;
+    --display:"Fraunces","Iowan Old Style",Georgia,serif;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --rule:#7a8188; --rule-hi:#cdd2d7;
+      --bg:#121315; --ink:#eceef0; --soft:#c3c7cc; --mute:#8f959c;
+      --accent:#d99a4c; --accent-ink:#e5ab63; --line:#2d3034; --chip:#202327; --chip-hi:#2e3237;
+      --win:#1a1c1f; --win-bar:#24272b; --win-edge:#4a4f56;
+      --shadow:0 22px 44px -18px rgba(0,0,0,.7),0 2px 6px rgba(0,0,0,.4);
+      --ink-filter:invert(1); --ink-blend:screen; color-scheme:dark;
+    }
+  }
+  :root[data-theme="dark"]{
+    --rule:#7a8188; --rule-hi:#cdd2d7;
+    --bg:#121315; --ink:#eceef0; --soft:#c3c7cc; --mute:#8f959c;
+    --accent:#d99a4c; --accent-ink:#e5ab63; --line:#2d3034; --chip:#202327; --chip-hi:#2e3237;
+    --win:#1a1c1f; --win-bar:#24272b; --win-edge:#4a4f56;
+    --shadow:0 22px 44px -18px rgba(0,0,0,.7),0 2px 6px rgba(0,0,0,.4);
+    --ink-filter:invert(1); --ink-blend:screen; color-scheme:dark;
+  }
+
+  body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.5;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:980px;margin:0 auto;padding-block:44px 64px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+  img.ink{filter:var(--ink-filter);mix-blend-mode:var(--ink-blend)}
+  :focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}
+
+  /* ---------- header ---------- */
+  /* the drawn portrait in the top-left corner, the name and the titles beside it */
+  .top{display:flex;align-items:center;gap:24px}
+  .portrait{flex:none;width:clamp(76px,10.5vw,126px);height:auto;border-radius:3px}
+  .head{flex:1;min-width:0;display:flex;flex-direction:column;gap:14px;container-type:inline-size}
+  /* the name in Fraunces at its softest: rounded stroke ends, thick-and-thin strokes */
+  .who{margin:0;font-family:var(--display);font-weight:620;font-variation-settings:"SOFT" 100,"WONK" 0;font-optical-sizing:auto;font-size:clamp(28px,5.4cqi,54px);line-height:1.05;letter-spacing:-.01em;color:var(--ink)}
+  .who span{white-space:nowrap}
+  /* age, small and quiet beside the name */
+  .who .age{font-size:.38em;font-weight:500;color:var(--mute);margin-left:.35em;letter-spacing:.02em;white-space:nowrap}
+  /* two rows of titles side by side, split by ochre dots; the type grows with the page so each row reaches across it.
+     A row only ever breaks between whole titles. */
+  .titles{font-size:clamp(15px,2.4cqi,25px);font-weight:600;line-height:1.35;color:var(--ink)}
+  .titles p{margin:0}
+  .titles span{white-space:nowrap}
+  .titles span:not(:last-child)::after{content:"·";color:var(--accent);font-weight:800;margin:0 .25em 0 .5em}
+  /* phone and email, under the references note */
+  .contact{display:flex;flex-direction:column;gap:10px;margin-top:22px}
+  .ci{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px}
+  .ci .ic{height:32px;width:auto}
+  .ci .ic.plane{height:30px;margin-left:-10px;margin-right:-4px}
+  .ci .val{font-size:15px;font-weight:400;letter-spacing:.02em;user-select:all}
+  .copy{font:600 11px/1 var(--sans);letter-spacing:.06em;text-transform:uppercase;color:var(--accent-ink);background:none;border:1px solid var(--line);border-radius:999px;padding:5px 9px;cursor:pointer}
+  .copy:hover{background:var(--chip)}
+  /* a brushed-silver line: a faint sheen runs along it */
+  .seam{display:block;width:100%;height:2px;margin:22px 0 10px;border:0;background:linear-gradient(90deg,var(--rule),var(--rule-hi) 30%,var(--rule) 55%,var(--rule-hi) 80%,var(--rule))}
+  .hint-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 16px;margin:0 0 26px}
+  .hint{margin:0;font-size:13px;color:var(--mute)}
+  .h-touch{display:none}
+  @media (hover:none){.h-mouse{display:none}.h-touch{display:inline}}
+
+  /* ---------- body ---------- */
+  .cols{display:grid;grid-template-columns:minmax(0,1fr) 280px;gap:44px}
+  h2{font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--accent-ink);margin:0 0 16px;display:flex;align-items:center;gap:10px}
+  h2::after{content:"";flex:1;height:1px;background:var(--line)}
+
+  /* the timeline of jobs */
+  .jobs{display:flex;flex-direction:column}
+  .job{display:grid;grid-template-columns:96px minmax(0,1fr);column-gap:26px;position:relative;padding-bottom:6px;cursor:pointer}
+  .job::after{content:"";position:absolute;left:108px;top:14px;bottom:-6px;width:1px;background:var(--line)}
+  .job:last-child::after{display:none}
+  .job::before{content:"";position:absolute;left:103px;top:12px;width:9px;height:9px;border-radius:50%;background:var(--bg);border:2px solid var(--accent);z-index:1;transition:background .15s}
+  .job.now::before,.job.on::before,.job.lit::before{background:var(--accent)}
+  .when{font-size:12px;font-weight:600;color:var(--mute);text-align:right;text-transform:uppercase;letter-spacing:.04em;line-height:1.35;padding-top:10px;font-variant-numeric:tabular-nums}
+  .when span{display:block}
+  .what{padding:7px 12px 10px;border-radius:10px;transition:background .15s}
+  .job:hover .what,.job.on .what,.job.lit .what{background:var(--chip)}
+  .role{font-size:17px;font-weight:700;line-height:1.3}
+  .org{font-size:14px;font-weight:500;color:var(--mute)}
+  .desc{margin:4px 0 0;color:var(--soft)}
+  .job:focus-visible{outline:none}
+  .job:focus-visible .what{outline:2px solid var(--accent);outline-offset:0}
+
+  /* the side column */
+  aside{display:flex;flex-direction:column;gap:30px;min-width:0}
+  aside section{min-width:0}
+  .grp{margin-bottom:14px}
+  .lbl{font-size:13px;font-weight:700;margin-bottom:7px}
+  .chips{display:flex;flex-wrap:wrap;gap:6px}
+  .chip{font:500 13px/1.2 var(--sans);color:var(--ink);background:var(--chip);border:1px solid transparent;border-radius:999px;padding:5px 11px;cursor:default;transition:background .15s,border-color .15s}
+  .chip:hover{background:var(--chip-hi);border-color:var(--accent)}
+  .card{padding:8px 10px;margin:0 -10px;border-radius:10px;transition:background .15s}
+  .card.item{cursor:pointer}
+  .card.item:hover,.card.on{background:var(--chip)}
+  .card + .card{margin-top:4px}
+  .card .role{font-size:16px}
+  .card .org{font-size:13px}
+  .card .desc{font-size:14px;margin-top:3px}
+  /* the small cover letter button beside the hint line: it opens only when clicked */
+  .letter{display:inline-flex;align-items:center;padding:5px 16px;border:1.5px solid var(--ink);border-radius:7px;cursor:pointer;transition:background .15s}
+  .letter:hover,.letter.on{background:var(--chip)}
+  .letter .role{font-size:14px;line-height:1.2}
+  .note{position:relative;border:1.5px solid var(--ink);border-radius:3px;padding:14px 16px;transform:rotate(-1.2deg);font-size:14px;font-weight:500;line-height:1.45;margin-top:18px}
+  .note .plane{position:absolute;right:-10px;top:-40px;height:50px;width:auto}
+
+  /* ---------- the notes window ---------- */
+  .win{position:fixed;z-index:20;width:min(350px,calc(100vw - 32px));max-height:min(72vh,560px);display:flex;flex-direction:column;background:var(--win);color:var(--ink);border:1.5px solid var(--win-edge);border-radius:10px;box-shadow:var(--shadow);overflow:hidden}
+  .win:not([hidden]){animation:pop .16s ease-out}
+  @keyframes pop{from{opacity:0;transform:translateY(4px) scale(.985)}to{opacity:1;transform:none}}
+  .win .bar{display:flex;align-items:center;gap:10px;padding:8px 8px 8px 14px;background:var(--win-bar);border-bottom:1px solid var(--line)}
+  .win .kind{font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-ink)}
+  .win .dates{margin-left:auto;font-size:12px;font-weight:600;color:var(--mute);font-variant-numeric:tabular-nums;white-space:nowrap}
+  .win .x{flex:none;width:28px;height:28px;border-radius:50%;border:0;background:none;color:var(--soft);font:400 20px/1 var(--sans);cursor:pointer}
+  .win .x:hover{background:var(--chip-hi)}
+  .win .pane{padding:14px 16px 16px;overflow:auto}
+  .win h3{margin:0;font-size:19px;line-height:1.25;font-weight:700;text-wrap:balance}
+  .win .sub{font-size:14px;font-weight:500;color:var(--mute);margin-top:2px}
+  .win .detail{margin-top:12px;color:var(--soft)}
+  .win .detail p{margin:0 0 10px}
+  .win .detail p:last-child{margin-bottom:0}
+  .win .detail ul{margin:0;padding-left:18px}
+  .win .detail li + li{margin-top:4px}
+  .win .detail .empty{color:var(--mute);font-style:italic}
+  .win .rel{margin-top:14px;padding-top:12px;border-top:1px dashed var(--line)}
+  .win .rel-h{font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-ink);margin-bottom:8px}
+  .win .rel-list.tools{display:flex;flex-wrap:wrap;gap:5px}
+  .win .tchip{font-size:12px;font-weight:500;background:var(--chip);border-radius:999px;padding:3px 9px}
+  .win .rel-job + .rel-job{margin-top:6px}
+  .win .rel-job b{display:block;font-size:14px}
+  .win .rel-job span{font-size:13px;color:var(--mute)}
+  /* phones and touch screens: the window rises from the bottom */
+  /* the cover letter opens in a wider window set for reading */
+  .win.wide{width:min(560px,calc(100vw - 32px));max-height:min(82vh,680px)}
+  .win.wide .detail{font-size:15.5px;line-height:1.65}
+  .win.sheet{left:max(12px,env(safe-area-inset-left,0px));right:max(12px,env(safe-area-inset-right,0px));bottom:calc(12px + env(safe-area-inset-bottom,0px));top:auto;width:auto;max-height:70vh}
+
+  /* ---------- titles in the name's font ---------- */
+  /* every title, label, date and skill uses the soft Fraunces of the name; descriptions stay in the plain sans */
+  .titles,h2,.role,.org,.when,.lbl,.chip,.ci .val,.win h3,.win .sub,.win .kind,.win .dates,.win .rel-h,.win .tchip,.win .rel-job{font-family:var(--display);font-variation-settings:"SOFT" 100,"WONK" 0;font-optical-sizing:auto}
+
+  /* ---------- narrow screens ---------- */
+  @media (max-width:760px){
+    .cols{grid-template-columns:minmax(0,1fr);gap:36px}
+    .job{grid-template-columns:minmax(0,1fr);padding-left:24px}
+    .job::before{left:0;top:6px}
+    .job::after{left:5px;top:8px}
+    .when{text-align:left;padding:2px 12px 0}
+    .when span{display:inline}
+    .what{padding-top:2px}
+    .note .plane{right:-2px}
+  }
+  /* phones: portrait and name side by side, the titles full width underneath */
+  @media (max-width:560px){
+    .top{display:grid;grid-template-columns:auto minmax(0,1fr);align-items:center;gap:14px}
+    .head{display:contents}
+    .portrait{width:68px}
+    .titles{grid-column:1 / -1}
+  }
+  @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <img class="portrait" src="portrait.jpg" alt="Drawn portrait of Isaak Kevan-Hoffman in sunglasses, wrapped in a plaid blanket" width="480" height="643">
+    <div class="head">
+      <h1 class="who">Isaak <span>Kevan-Hoffman</span> <small class="age">Age 30</small></h1>
+      <div class="titles">
+        <p><span>Creative Technologist</span> <span>Product Designer &amp; Developer</span> <span>Game Systems Designer</span></p>
+        <p><span>Scenic Artist &amp; Fabricator</span> <span>Printmaker &amp; Filmmaker</span> <span>E-commerce Manager</span></p>
+      </div>
+    </div>
+  </header>
+
+  <hr class="seam">
+  <div class="hint-row">
+    <p class="hint"><span class="h-mouse">Hover over any job to open its notes. Click to keep one open.</span><span class="h-touch">Tap any job to open its notes.</span></p>
+    <div class="item letter" data-k="cover" data-wide data-click data-sub="" data-empty="The letter is on its way." tabindex="0" role="button"><span class="role">Cover letter</span></div>
+  </div>
+
+  <div class="cols">
+    <main>
+      <h2>Studio, scenic &amp; fabrication</h2>
+      <div class="jobs">
+        <div class="job item" data-k="lama" tabindex="0" role="button"><div class="when"><span>Jul 2024</span> <span>– Aug 2026</span></div><div class="what">
+          <div class="role">Print Shop Production &amp; E-commerce Manager</div><div class="org">Lama Foundation, nonprofit · Lama, NM</div>
+          <p class="desc">Managed and maintained orders and stock, created new products and oversaw production in the print shop.</p></div></div>
+
+        <div class="job item" data-k="lostfound" tabindex="0" role="button"><div class="when"><span>Feb – Apr</span> <span>2024</span></div><div class="what">
+          <div class="role">Prop Assistant</div><div class="org">Lost and Found Props</div>
+          <p class="desc">Move, sort and arrange props by color and theme so every setup looks intentional.</p></div></div>
+
+        <div class="job item" data-k="mcgoran" tabindex="0" role="button"><div class="when"><span>May 2023</span></div><div class="what">
+          <div class="role">Decorative Painting</div><div class="org">Alison McGoran</div>
+          <p class="desc">Gold leafing a custom-designed wall detail made to look like kintsugi ceramic.</p></div></div>
+
+        <div class="job item" data-k="sachs" tabindex="0" role="button"><div class="when"><span>Apr 2023</span></div><div class="what">
+          <div class="role">Venetian Plaster</div><div class="org">Robin Sachs, decorative painter</div>
+          <p class="desc">Venetian-plastered a Chelsea townhouse master bedroom to a specified texture, in a crew of three.</p></div></div>
+
+        <div class="job item" data-k="fieldcenter" tabindex="0" role="button"><div class="when"><span>Jul – Oct</span> <span>2022</span></div><div class="what">
+          <div class="role">Assistant to the Directors</div><div class="org">The Field Center · Rockingham, VT</div>
+          <p class="desc">A bit of everything, from renovating the staff quarters to working the farm.</p></div></div>
+
+        <div class="job item" data-k="bednark" tabindex="0" role="button"><div class="when"><span>Mar – Jul</span> <span>2022</span></div><div class="what">
+          <div class="role">CNC Operator &amp; Programmer</div><div class="org">Bednark · Brooklyn</div>
+          <p class="desc">Programmed and ran CNC milling, laser cutters, waterjet and industrial printers.</p></div></div>
+
+        <div class="job item" data-k="scenicshop" tabindex="0" role="button"><div class="when"><span>Oct 2021</span> <span>– Mar 2022</span></div><div class="what">
+          <div class="role">Scenic Artist</div><div class="org">Scenic Fabrication Design Shop · Brooklyn</div>
+          <p class="desc">Scenic painting, CNC, casting and mold making.</p></div></div>
+
+        <div class="job item" data-k="disney" tabindex="0" role="button"><div class="when"><span>Jul 2021</span></div><div class="what">
+          <div class="role">Unit Production Assistant</div><div class="org">Disney feature film · NYC</div>
+          <p class="desc">Locations logistics and signage.</p></div></div>
+
+        <div class="job item" data-k="smith" tabindex="0" role="button"><div class="when"><span>Apr 2019</span> <span>– Apr 2020</span></div><div class="what">
+          <div class="role">Art Assistant</div><div class="org">Prof. Robert M. Smith, NYIT · Long Island</div>
+          <p class="desc">Finished the fine detail on a marble sculpture.</p></div></div>
+
+        <div class="job item" data-k="judelson" tabindex="0" role="button"><div class="when"><span>Oct 2018</span> <span>– Apr 2020</span></div><div class="what">
+          <div class="role">Studio Assistant</div><div class="org">David Judelson, artist &amp; architect · Brooklyn</div>
+          <p class="desc">Wood fabrication, scale models, 3D modeling in Cinema 4D, 3D printing and painting.</p></div></div>      </div>
+    </main>
+
+    <aside>
+      <section>
+        <h2>Toolbox</h2>
+        <div class="grp"><div class="lbl">Finishes</div><div class="chips">
+          <button class="chip" type="button" tabindex="-1" data-k="gold-leaf" data-jobs="mcgoran">Gold leaf</button>
+          <button class="chip" type="button" tabindex="-1" data-k="venetian-plaster" data-jobs="sachs">Venetian plaster</button>
+          <button class="chip" type="button" tabindex="-1" data-k="scenic-painting" data-jobs="scenicshop">Scenic painting</button>
+          <button class="chip" type="button" tabindex="-1" data-k="decorative-painting" data-jobs="mcgoran sachs fieldcenter">Decorative painting</button></div></div>
+        <div class="grp"><div class="lbl">Fabrication</div><div class="chips">
+          <button class="chip" type="button" tabindex="-1" data-k="cnc-milling" data-jobs="bednark scenicshop">CNC milling</button>
+          <button class="chip" type="button" tabindex="-1" data-k="laser-cutter" data-jobs="bednark">Laser cutter</button>
+          <button class="chip" type="button" tabindex="-1" data-k="waterjet" data-jobs="bednark">Waterjet</button>
+          <button class="chip" type="button" tabindex="-1" data-k="3d-printing" data-jobs="judelson">3D printing</button>
+          <button class="chip" type="button" tabindex="-1" data-k="silicone-molds" data-jobs="scenicshop">Silicone mold making with fiberglass shells</button>
+          <button class="chip" type="button" tabindex="-1" data-k="epoxy-casting" data-jobs="scenicshop">Epoxy casting</button>
+          <button class="chip" type="button" tabindex="-1" data-k="woodwork" data-jobs="judelson">Basic carpentry</button>
+          <button class="chip" type="button" tabindex="-1" data-k="sculpture" data-jobs="smith">Sculpture</button>
+          <button class="chip" type="button" tabindex="-1" data-k="marble-finishing" data-jobs="smith">Marble finishing</button>
+          <button class="chip" type="button" tabindex="-1" data-k="kiln">Kiln fabrication &amp; firing</button>
+          <button class="chip" type="button" tabindex="-1" data-k="clay">Clay fabrication</button></div></div>
+        <div class="grp"><div class="lbl">Digital</div><div class="chips">
+          <button class="chip" type="button" tabindex="-1" data-k="cinema-4d" data-jobs="judelson">Cinema 4D</button>
+          <button class="chip" type="button" tabindex="-1" data-k="3d-modeling" data-jobs="judelson">3D modeling</button>
+          <button class="chip" type="button" tabindex="-1" data-k="cad">CAD</button>
+          <button class="chip" type="button" tabindex="-1" data-k="cam-programming" data-jobs="bednark">CAM programming</button>
+          <button class="chip" type="button" tabindex="-1" data-k="scale-models" data-jobs="judelson">Scale models</button>
+          <button class="chip" type="button" tabindex="-1" data-k="software-design">Software design</button>
+          <button class="chip" type="button" tabindex="-1" data-k="digital-tools">Digital tool creation</button>
+          <button class="chip" type="button" tabindex="-1" data-k="film-photo-editing">Film &amp; photo editing</button>
+          <button class="chip" type="button" tabindex="-1" data-k="publication-design">Publication design</button></div></div>
+        <div class="grp"><div class="lbl">Sets</div><div class="chips">
+          <button class="chip" type="button" tabindex="-1" data-k="prop-styling" data-jobs="lostfound">Prop styling</button>
+          <button class="chip" type="button" tabindex="-1" data-k="locations" data-jobs="disney">Locations</button>
+          <button class="chip" type="button" tabindex="-1" data-k="signage" data-jobs="disney">Signage</button></div></div>
+        <div class="grp"><div class="lbl">Communications</div><div class="chips">
+          <button class="chip" type="button" tabindex="-1" data-k="consensus" data-jobs="lama">Consensus decision-making</button>
+          <button class="chip" type="button" tabindex="-1" data-k="altered-consensus" data-jobs="lama">Altered consensus</button>
+          <button class="chip" type="button" tabindex="-1" data-k="events" data-jobs="lama">Event organizing</button>
+          <button class="chip" type="button" tabindex="-1" data-k="team-coordination" data-jobs="disney">Team coordination</button>
+          <button class="chip" type="button" tabindex="-1" data-k="client-communication" data-jobs="scenicshop bednark">Client communication</button></div></div>
+      </section>
+
+      <section>
+        <h2>Education</h2>
+        <div class="card">
+          <div class="role">University of New Mexico</div><div class="org">Fine Arts · 2018</div></div>
+        <div class="card">
+          <div class="role">Santa Fe Community College</div><div class="org">Santa Fe, NM · 2014 – 2017</div></div>
+      </section>
+
+      <section>
+        <div class="note"><img class="ink plane" src="plane.png" alt="" width="456" height="300">References, a creative CV and an art portfolio are available via request.</div>
+        <div class="contact">
+          <div class="ci"><img class="ink ic" src="phone.png" alt="" width="216" height="264"><span class="val">505-795-9050</span><button class="copy" type="button" data-copy="505-795-9050" aria-label="Copy phone number">Copy</button></div>
+          <div class="ci"><img class="ink ic plane" src="plane.png" alt="" width="456" height="300"><span class="val">Isaakkevan@gmail.com</span><button class="copy" type="button" data-copy="Isaakkevan@gmail.com" aria-label="Copy email address">Copy</button></div>
+        </div>
+      </section>
+    </aside>
+  </div>
+</div>
+
+<div class="win" id="win" role="dialog" aria-labelledby="win-t" hidden>
+  <div class="bar"><span class="kind" id="win-kind"></span><span class="dates" id="win-when"></span><button class="x" id="win-x" type="button" aria-label="Close">×</button></div>
+  <div class="pane">
+    <h3 id="win-t"></h3><div class="sub" id="win-sub"></div>
+    <div class="detail" id="win-detail"></div>
+    <div class="rel" id="win-rel"><div class="rel-h" id="win-rel-h"></div><div class="rel-list" id="win-rel-list"></div></div>
+  </div>
+</div>
+
+<script>
+// ---------- the notes in each window: fill these in ----------
+// One entry per job. Leave it "" and the window says "More on this soon."
+// A plain string shows as paragraphs (a blank line starts a new one). A list like ["one", "two"] shows as bullet points.
+const DETAILS = {
+  // the cover letter (blank lines between paragraphs)
+  cover:       "My professional and working experience has been quite eclectic, and that comes from my nature. I enjoy understanding systems and relationships, so early in my working life I was driven more to gain a broad understanding of many fields than to pursue a single specialty. I've come to see this as gradually building a unique map of experience, one that lets me relate at a managerial level to a wide range of practitioners.\n\nThat said, my focus has always been the arts. I think it's important to keep a balance between physical work, like fabricating by hand, and digital work, such as digital fabrication, programming and writing.\n\nWorking as a freelancer takes constant management, because the work is unstable by nature. Over time I've found that this has given me a very valuable skill: staying level-headed and far-sighted even in difficult or complex situations. It's what lets me manage, delegate, and stay focused and aware to intelligently navigate complex, ever-changing situations, which is how the world operates. This allows plans, previous considerations and timelines to be maintained.\n\nI enjoy working with people, and I also very much enjoy working alone on creative projects, so I look for work that lets me balance the two. In both modes, I know I'm contributing to the expression of something larger than myself. To me, that is the ideal of any position within an organization: to serve the health and mission of a project in a committed, focused way.",
+  // jobs
+  lama:        "Lama Foundation is a unique place. It's run by altered consensus, so I was appointed to my position through a community process that I also took part in.\n\nMost of my work was running the print shop, but I was also part of the organization's decision-making and governance.\n\nWhile living on the mountain, I also organized a number of events and experimental arts containers. It was a multifaceted management role within the organization.",   // Print Shop Production & E-commerce Manager, Lama Foundation
+  lostfound:   "I helped Lost and Found Props move into a new building. Most of the work was moving packed props, unpacking them and arranging them within the shop's organizational system. The job lasted about two months.",   // Prop Assistant, Lost and Found Props
+  mcgoran:     "This was a relatively short but interesting job. It was a custom piece inside an apartment in the Kips Bay apartment complex in Manhattan, a somewhat famous Brutalist building.",   // Decorative Painting, Alison McGoran
+  sachs:       "This job was for a large master bedroom in a townhouse being renovated in Chelsea, Manhattan. The room was plastered from wall to ceiling in a very specific matte black texture chosen by the interior designer.",   // Venetian Plaster, Robin Sachs
+  fieldcenter: "I provided decorative painting, creating a custom-designed, multicolored geometric paint pattern for one of the organization's rooms. I also cooked meals and took part in meetings about programs and planning for the nonprofit's future.",   // Assistant to the Directors, The Field Center
+  bednark:     "This job took technical skill and quick, responsive action. CNC machines are programmable, but they still have to be watched, and you need to understand them well enough to know how to respond.\n\nThe team I was part of served a large fabrication studio that mainly built promotional retail installations for major brands such as Gucci, Nike and Louis Vuitton.\n\nI came to this job through a colleague's recommendation from Scenic Fabrication Design Shop, where I had started working with my first CNC router and got interested in the work.",   // CNC Operator & Programmer, Bednark
+  scenicshop:  "Scenic Fabrication Design Shop in Brooklyn is a studio that specializes in film and prop fabrication and custom promotional retail installations, such as window displays and promotional sculptures out on the street. We worked for a number of clients, mainly large brands.\n\nI came in on a seasonal project making Macy's flagship window displays. Because of what I was doing in my personal work at the time, I was mainly assigned to producing clouds backlit with LEDs.\n\nI wanted experience with many different kinds of fabrication, so that I'd understand those ways of making both hands-on and in their own language. While there I also did large-scale rotary casting for a promotional prop in a Diesel commercial, along with CNC fabrication.\n\nWork at the shop ebbs and flows with the seasons. Since I had chosen to explore a wide range of processes instead of specializing, I moved on at the close of the spring season and started at Bednark, focusing on CNC fabrication.",   // Scenic Artist, Scenic Fabrication Design Shop
+  disney:      "This was a month-long project. Unit production assistant is the entry-level job in a film's locations department.\n\nMy main job was to be first on set to put up signs and hand out parking contracts to all the truck drivers. From there I set up catering for the whole production, handled sanitation, and set up the stations for extras and makeup artists.\n\nThe job meant managing myself and a truck, and staying in constant contact with the locations assistants, the assistant locations managers and the locations manager across a wide range of locations, all within Manhattan and Brooklyn.",   // Unit Production Assistant, Disney feature film
+  smith:       "I met Robert through a peer I was working with at David Judelson's studio. Robert was the head of NYIT's sculpture department, and my main job was the finishing detail and final sanding on one of his sculptures.\n\nThe job also gave me the chance to work and create some pieces at the Innovation Center, which Robert founded on NYIT's Long Island campus. The Innovation Center is a collaboration between robotics, medical research and the arts.",   // Art Assistant, Prof. Robert M. Smith
+  judelson:    "David Judelson is a retired architecture professor who was exploring architecturally based sculpture, so every piece was fabricated using the principles of architecture.\n\nIt was a very small team of about five people, though that number fluctuated, made up mostly of recently graduated architects and engineers, along with artists. Together we fabricated David's designs, and as a team we also came up with proofs of concept and built them.",   // Studio Assistant, David Judelson
+};
+
+// ---------- the notes window: hover to peek, click or tap to keep it open ----------
+const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
+const win = $('#win'), items = $$('.item'), fine = matchMedia('(hover: hover) and (pointer: fine)');
+let cur = null, pinned = false, tOpen = 0, tClose = 0, quiet = false;
+const byKey = k => document.querySelector(`.item[data-k="${k}"]`);
+const jobsOf = el => (el.dataset.jobs || '').split(' ').filter(Boolean);
+const make = (tag, cls, text) => { const n = document.createElement(tag); if (cls) n.className = cls; if (text != null) n.textContent = text; return n; };
+
+function fill(el) {
+  const isSkill = el.classList.contains('chip');
+  $('#win-kind').textContent = isSkill ? el.closest('.grp').querySelector('.lbl').textContent : (el.dataset.kind || '');
+  $('#win-when').textContent = (el.querySelector('.when')?.textContent || '').replace(/\s+/g, ' ').trim();
+  $('#win-t').textContent = isSkill ? el.textContent.trim() : el.querySelector('.role').textContent;
+  const sub = isSkill ? '' : (el.dataset.sub ?? el.querySelector('.org').textContent);
+  win.classList.toggle('wide', 'wide' in el.dataset);
+  $('#win-sub').textContent = sub; $('#win-sub').hidden = !sub;
+  // the written notes
+  const d = $('#win-detail'), v = DETAILS[el.dataset.k];
+  d.replaceChildren();
+  if (!v || (Array.isArray(v) && !v.length)) d.append(make('p', 'empty', el.dataset.empty || 'More on this soon.'));
+  else if (Array.isArray(v)) { const ul = make('ul'); v.forEach(t => ul.append(make('li', '', t))); d.append(ul); }
+  else String(v).split(/\n\s*\n/).forEach(t => d.append(make('p', '', t.trim())));
+  // a skill lists where it was used; a job lists the tools it took
+  const list = $('#win-rel-list'); list.replaceChildren();
+  if (isSkill) {
+    $('#win-rel-h').textContent = 'Where I used it'; list.className = 'rel-list jobs';
+    jobsOf(el).map(byKey).filter(Boolean).forEach(j => { const r = make('div', 'rel-job'); r.append(make('b', '', j.querySelector('.role').textContent), make('span', '', j.querySelector('.org').textContent)); list.append(r); });
+  } else {
+    $('#win-rel-h').textContent = 'Tools on this job'; list.className = 'rel-list tools';
+    $$('.chip').filter(c => jobsOf(c).includes(el.dataset.k)).forEach(c => list.append(make('span', 'tchip', c.textContent.trim())));
+  }
+  $('#win-rel').hidden = !list.children.length;
+  // light up the jobs a skill was used on
+  $$('.lit').forEach(x => x.classList.remove('lit'));
+  if (isSkill) jobsOf(el).map(byKey).forEach(j => j && j.classList.add('lit'));
+}
+
+function open(el, pin) {
+  clearTimeout(tOpen); clearTimeout(tClose);
+  if (cur !== el) { cur?.classList.remove('on'); cur?.setAttribute('aria-expanded', 'false'); cur = el; pinned = false; fill(el); }
+  if (pin) pinned = true;
+  el.classList.add('on'); el.setAttribute('aria-expanded', 'true');
+  win.hidden = false; place();
+}
+
+function close() {
+  clearTimeout(tOpen); clearTimeout(tClose);
+  if (!cur) return;
+  cur.classList.remove('on'); cur.setAttribute('aria-expanded', 'false');
+  cur = null; pinned = false; win.hidden = true;
+  $$('.lit').forEach(x => x.classList.remove('lit'));
+}
+
+// beside the item on a computer, rising from the bottom on a phone
+const asSheet = () => !fine.matches || innerWidth < 640;
+function place() {
+  if (!cur || win.hidden) return;
+  const sheet = asSheet(); win.classList.toggle('sheet', sheet);
+  if (sheet) { win.style.left = win.style.top = ''; return; }
+  const r = (cur.querySelector('.what') || cur).getBoundingClientRect(), w = win.offsetWidth, h = win.offsetHeight;
+  const vw = document.documentElement.clientWidth, vh = innerHeight, m = 14;
+  let x, y = r.top;
+  if (r.right + m + w <= vw - m) x = r.right + m;
+  else if (r.left - m - w >= m) x = r.left - m - w;
+  else { x = Math.min(Math.max(m, r.left), vw - w - m); y = r.bottom + 8; if (y + h > vh - m) y = r.top - h - 8; }
+  win.style.left = x + 'px'; win.style.top = Math.min(Math.max(m, y), vh - h - m) + 'px';
+}
+
+items.forEach(el => {
+  el.setAttribute('aria-expanded', 'false'); el.setAttribute('aria-controls', 'win');
+  el.addEventListener('mouseenter', () => { if (!fine.matches || 'click' in el.dataset || (pinned && cur && 'click' in cur.dataset)) return; clearTimeout(tClose); clearTimeout(tOpen); tOpen = setTimeout(() => open(el), cur ? 40 : 110); });
+  el.addEventListener('mouseleave', () => { if (!fine.matches) return; clearTimeout(tOpen); if (!pinned) tClose = setTimeout(close, 200); });
+  el.addEventListener('click', e => { e.stopPropagation(); if (cur === el && pinned) close(); else open(el, true); });
+  el.addEventListener('focus', () => { if (!quiet && cur !== el && fine.matches && !('click' in el.dataset)) open(el); });
+  el.addEventListener('blur', e => { if (cur === el && !pinned && !win.contains(e.relatedTarget) && !el.matches(':hover')) close(); });
+  el.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); if (cur === el && pinned) close(); else open(el, true); } });
+});
+win.addEventListener('mouseenter', () => clearTimeout(tClose));
+win.addEventListener('mouseleave', () => { if (!pinned) tClose = setTimeout(close, 200); });
+win.addEventListener('click', e => e.stopPropagation());
+$('#win-x').addEventListener('click', () => { const el = cur; close(); quiet = true; el?.focus({ preventScroll: true }); quiet = false; });
+document.addEventListener('click', () => close());
+document.addEventListener('keydown', e => { if (e.key === 'Escape' && cur) { const el = cur; close(); quiet = true; el.focus({ preventScroll: true }); quiet = false; } });
+let raf = 0; const replace = () => { cancelAnimationFrame(raf); raf = requestAnimationFrame(place); };
+addEventListener('scroll', replace, { passive: true }); addEventListener('resize', replace);
+
+// ---------- hovering a skill lights up the jobs it was used on (no window) ----------
+$$('.chip').forEach(c => {
+  const light = on => jobsOf(c).map(byKey).forEach(j => j && j.classList.toggle('lit', on));
+  c.addEventListener('mouseenter', () => light(true));
+  c.addEventListener('mouseleave', () => light(false));
+});
+
+// ---------- copy the phone number or email ----------
+$$('.copy').forEach(b => b.addEventListener('click', e => {
+  e.stopPropagation();
+  const done = t => { b.textContent = t; setTimeout(() => b.textContent = 'Copy', 1600); };
+  const pick = () => { const r = document.createRange(); r.selectNodeContents(b.parentElement.querySelector('.val')); const s = getSelection(); s.removeAllRanges(); s.addRange(r); done('Selected'); };
+  try { navigator.clipboard.writeText(b.dataset.copy).then(() => done('Copied'), pick); } catch { pick(); }
+}));
+</script>
